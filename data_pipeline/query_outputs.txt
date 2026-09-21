@@ -1,0 +1,315 @@
+============================================================
+MODULE 1 SQL QUERY OUTPUTS
+============================================================
+
+QUERY 1 - SELECT + WHERE
+
+SELECT
+    title,
+    price_gbp,
+    rating
+FROM books
+WHERE rating >= 4
+
+OUTPUT:
+                                                                                                                              title  price_gbp  rating
+                                                             I Had a Nice Time And Other Lies...: How to find love & sh*t like that      57.36       4
+                                                                                                                     Keep Me Posted      20.46       4
+                                                                                                             Grey (Fifty Shades #4)      48.49       4
+                                                                                                                         Some Women      13.73       5
+                                                                                           Shopaholic Ties the Knot (Shopaholic #3)      48.39       5
+                                                                                                             The Undomestic Goddess      45.75       4
+                                                                                                       The Nanny Diaries (Nanny #1)      52.53       5
+                                                                                             Something Borrowed (Darcy & Rachel #1)      48.96       5
+                                                                                              The Edge of Reason (Bridget Jones #2)      19.18       4
+                                                                 Full Moon over Noahâs Ark: An Odyssey to Mount Ararat and Beyond      49.43       4
+                                                                                                   A Year in Provence (Provence #1)      56.88       4
+                                                                                                 1,000 Places to See Before You Die      26.08       5
+                                                                                                                     Wall and Piece      44.18       4
+                                                                Art and Fear: Observations on the Perils (and Rewards) of Artmaking      48.63       4
+                                                                                                                  History of Beauty      10.29       4
+                                                                                                                   The Story of Art      41.14       4
+                                                                                                                     Ways of Seeing      39.51       5
+                                                                          The Most Perfect Thing: Inside (and Outside) a Bird's Egg      42.96       4
+                                                               Immunity: How Elie Metchnikoff Changed the Course of Modern Medicine      57.36       5
+                                                                Sorting the Beef from the Bull: The Science of Food Fraud Forensics      44.74       4
+                                                                                                              The Origin of Species      10.01       4
+                                       The Elegant Universe: Superstrings, Hidden Dimensions, and the Quest for the Ultimate Theory      13.03       4
+The Disappearing Spoon: And Other True Tales of Madness, Love, and the History of the World from the Periodic Table of the Elements      57.35       5
+                                                                                                     Seven Brief Lessons on Physics      30.60       4
+                                                                                   Princess Between Worlds (Wide-Awake Princess #5)      13.34       5
+                                                                                                             The Star-Touched Queen      46.02       5
+                                                                                    The Bane Chronicles (The Bane Chronicles #1-11)      44.73       4
+                           Demigods & Magicians: Percy and Annabeth Meet the Kanes (Percy Jackson & Kane Chronicles Crossover #1-3)      37.51       5
+                                                                                          City of Glass (The Mortal Instruments #3)      56.02       4
+                                                                                                             The Star-Touched Queen      32.30       5
+                                                                                           King's Folly (The Kinsman Chronicles #1)      39.61       5
+                                                                                   Every Heart a Doorway (Every Heart A Doorway #1)      12.16       5
+                                                                                        A Gathering of Shadows (Shades of Magic #2)      44.81       4
+                                                                                                The Raven Boys (The Raven Cycle #1)      57.74       4
+                                                                                       The False Prince (The Ascendance Trilogy #1)      56.00       5
+                                                                                      A Feast for Crows (A Song of Ice and Fire #4)      17.21       4
+                                                                                           The Beast (Black Dagger Brotherhood #14)      46.08       5
+                                                                                              Paper and Fire (The Great Library #2)      49.45       5
+                                                                        Harry Potter and the Order of the Phoenix (Harry Potter #5)      31.63       4
+                                                                           Harry Potter and the Half-Blood Prince (Harry Potter #6)      48.75       5
+                                                                                  The Rose & the Dagger (The Wrath and the Dawn #2)      58.64       4
+                                                                                                                    Heir to the Sky      44.07       4
+                                                                                                                                Ash      22.06       4
+                                                                                                 Shadow Rites (Jane Yellowrock #10)      21.72       4
+                                                                                                                Myriad (Prentor #1)      58.75       4
+
+QUERY 2 - ORDER BY + LIMIT
+
+SELECT
+    title,
+    price_gbp,
+    rating
+FROM books
+ORDER BY price_gbp DESC
+LIMIT 10
+
+OUTPUT:
+                                                                                                                              title  price_gbp  rating
+                                                                                                                Myriad (Prentor #1)      58.75       4
+                                                                                  The Rose & the Dagger (The Wrath and the Dawn #2)      58.64       4
+                                                                                                The Raven Boys (The Raven Cycle #1)      57.74       4
+                                                             I Had a Nice Time And Other Lies...: How to find love & sh*t like that      57.36       4
+                                                               Immunity: How Elie Metchnikoff Changed the Course of Modern Medicine      57.36       5
+The Disappearing Spoon: And Other True Tales of Madness, Love, and the History of the World from the Periodic Table of the Elements      57.35       5
+                                                                                                   A Year in Provence (Provence #1)      56.88       4
+                                                                                        A Shard of Ice (The Black Symphony Saga #1)      56.63       3
+                                                                                                                  Masks and Shadows      56.40       2
+                                                                                          City of Glass (The Mortal Instruments #3)      56.02       4
+
+QUERY 3 - DISTINCT
+
+SELECT DISTINCT category_name
+FROM categories
+ORDER BY category_name
+
+OUTPUT:
+  category_name
+            Art
+        Fantasy
+        Science
+         Travel
+Women's Fiction
+
+QUERY 4 - IN
+
+SELECT
+    title,
+    price_gbp,
+    rating
+FROM books
+WHERE rating IN (4, 5)
+
+OUTPUT:
+                                                                                                                              title  price_gbp  rating
+                                                             I Had a Nice Time And Other Lies...: How to find love & sh*t like that      57.36       4
+                                                                                                                     Keep Me Posted      20.46       4
+                                                                                                             Grey (Fifty Shades #4)      48.49       4
+                                                                                                                         Some Women      13.73       5
+                                                                                           Shopaholic Ties the Knot (Shopaholic #3)      48.39       5
+                                                                                                             The Undomestic Goddess      45.75       4
+                                                                                                       The Nanny Diaries (Nanny #1)      52.53       5
+                                                                                             Something Borrowed (Darcy & Rachel #1)      48.96       5
+                                                                                              The Edge of Reason (Bridget Jones #2)      19.18       4
+                                                                 Full Moon over Noahâs Ark: An Odyssey to Mount Ararat and Beyond      49.43       4
+                                                                                                   A Year in Provence (Provence #1)      56.88       4
+                                                                                                 1,000 Places to See Before You Die      26.08       5
+                                                                                                                     Wall and Piece      44.18       4
+                                                                Art and Fear: Observations on the Perils (and Rewards) of Artmaking      48.63       4
+                                                                                                                  History of Beauty      10.29       4
+                                                                                                                   The Story of Art      41.14       4
+                                                                                                                     Ways of Seeing      39.51       5
+                                                                          The Most Perfect Thing: Inside (and Outside) a Bird's Egg      42.96       4
+                                                               Immunity: How Elie Metchnikoff Changed the Course of Modern Medicine      57.36       5
+                                                                Sorting the Beef from the Bull: The Science of Food Fraud Forensics      44.74       4
+                                                                                                              The Origin of Species      10.01       4
+                                       The Elegant Universe: Superstrings, Hidden Dimensions, and the Quest for the Ultimate Theory      13.03       4
+The Disappearing Spoon: And Other True Tales of Madness, Love, and the History of the World from the Periodic Table of the Elements      57.35       5
+                                                                                                     Seven Brief Lessons on Physics      30.60       4
+                                                                                   Princess Between Worlds (Wide-Awake Princess #5)      13.34       5
+                                                                                                             The Star-Touched Queen      46.02       5
+                                                                                    The Bane Chronicles (The Bane Chronicles #1-11)      44.73       4
+                           Demigods & Magicians: Percy and Annabeth Meet the Kanes (Percy Jackson & Kane Chronicles Crossover #1-3)      37.51       5
+                                                                                          City of Glass (The Mortal Instruments #3)      56.02       4
+                                                                                                             The Star-Touched Queen      32.30       5
+                                                                                           King's Folly (The Kinsman Chronicles #1)      39.61       5
+                                                                                   Every Heart a Doorway (Every Heart A Doorway #1)      12.16       5
+                                                                                        A Gathering of Shadows (Shades of Magic #2)      44.81       4
+                                                                                                The Raven Boys (The Raven Cycle #1)      57.74       4
+                                                                                       The False Prince (The Ascendance Trilogy #1)      56.00       5
+                                                                                      A Feast for Crows (A Song of Ice and Fire #4)      17.21       4
+                                                                                           The Beast (Black Dagger Brotherhood #14)      46.08       5
+                                                                                              Paper and Fire (The Great Library #2)      49.45       5
+                                                                        Harry Potter and the Order of the Phoenix (Harry Potter #5)      31.63       4
+                                                                           Harry Potter and the Half-Blood Prince (Harry Potter #6)      48.75       5
+                                                                                  The Rose & the Dagger (The Wrath and the Dawn #2)      58.64       4
+                                                                                                                    Heir to the Sky      44.07       4
+                                                                                                                                Ash      22.06       4
+                                                                                                 Shadow Rites (Jane Yellowrock #10)      21.72       4
+                                                                                                                Myriad (Prentor #1)      58.75       4
+
+QUERY 5 - BETWEEN
+
+SELECT
+    title,
+    price_gbp,
+    price_inr
+FROM books
+WHERE price_gbp BETWEEN 20 AND 40
+
+OUTPUT:
+                                                                                                   title  price_gbp  price_inr
+                                                                                          Keep Me Posted      20.46   2158.530
+                                                                                  Can You Keep a Secret?      21.94   2314.670
+                                                                Bridget Jones's Diary (Bridget Jones #1)      29.82   3146.010
+                                     Vagabonding: An Uncommon Guide to the Art of Long-Term World Travel      36.94   3897.170
+                                                                                    Under the Tuscan Sun      37.33   3938.315
+                                                                                The Great Railway Bazaar      30.54   3221.970
+       The Road to Little Dribbling: Adventures of an American in Britain (Notes From a Small Island #2)      23.21   2448.655
+                                                               Neither Here nor There: Travels in Europe      38.95   4109.225
+                                                                      1,000 Places to See Before You Die      26.08   2751.440
+                                                                                            The Art Book      32.34   3411.870
+                                                                                          Ways of Seeing      39.51   4168.305
+                                           Tipping Point for Planet Earth: How Close Are We to the Edge?      37.55   3961.525
+            Diary of a Citizen Scientist: Chasing Tiger Beetles and Other New Ways of Engaging the World      28.41   2997.255
+                                   Surely You're Joking, Mr. Feynman!: Adventures of a Curious Character      25.83   2725.065
+                                                                          Seven Brief Lessons on Physics      30.60   3228.300
+                                                                                        The Selfish Gene      29.45   3106.975
+                                                           Saga, Volume 6 (Saga (Collected Editions) #6)      25.02   2639.610
+                              Avatar: The Last Airbender: Smoke and Shadow, Part 3 (Smoke and Shadow #3)      28.09   2963.495
+                                                                    Throne of Glass (Throne of Glass #1)      35.07   3699.885
+                                                                        Island of Dragons (Unwanteds #7)      29.65   3128.075
+Demigods & Magicians: Percy and Annabeth Meet the Kanes (Percy Jackson & Kane Chronicles Crossover #1-3)      37.51   3957.305
+                                                                        Searching for Meaning in Gailana      38.73   4086.015
+                                                                                  The Star-Touched Queen      32.30   3407.650
+                                                                King's Folly (The Kinsman Chronicles #1)      39.61   4178.855
+                                             Harry Potter and the Order of the Phoenix (Harry Potter #5)      31.63   3336.965
+                                                                                      Soldier (Talon #3)      24.72   2607.960
+                                                                                                     Ash      22.06   2327.330
+                                                           A Storm of Swords (A Song of Ice and Fire #3)      31.22   3293.710
+                                                          The Silent Twin (Detective Jennifer Knight #3)      36.25   3824.375
+                                                     The Mirror & the Maze (The Wrath and the Dawn #1.5)      29.38   3099.590
+                                                                      Shadow Rites (Jane Yellowrock #10)      21.72   2291.460
+                                                                                    Origins (Alphas 0.5)      28.99   3058.445
+
+QUERY 6 - JOIN
+
+SELECT
+    c.category_name,
+    b.title,
+    b.rating,
+    b.price_gbp
+FROM books b
+JOIN categories c
+    ON b.category_id = c.category_id
+ORDER BY
+    c.category_name,
+    b.rating DESC,
+    b.title
+
+OUTPUT:
+  category_name                                                                                                                               title  rating  price_gbp
+            Art                                                                                                                      Ways of Seeing       5      39.51
+            Art                                                                 Art and Fear: Observations on the Perils (and Rewards) of Artmaking       4      48.63
+            Art                                                                                                                   History of Beauty       4      10.29
+            Art                                                                                                                    The Story of Art       4      41.14
+            Art                                                                                                                      Wall and Piece       4      44.18
+            Art                                                                                             Feathers: Displays of Brilliant Plumage       3      49.05
+            Art                                                                                      The New Drawing on the Right Side of the Brain       3      43.02
+            Art                                                                                                                        The Art Book       2      32.34
+        Fantasy                            Demigods & Magicians: Percy and Annabeth Meet the Kanes (Percy Jackson & Kane Chronicles Crossover #1-3)       5      37.51
+        Fantasy                                                                                    Every Heart a Doorway (Every Heart A Doorway #1)       5      12.16
+        Fantasy                                                                            Harry Potter and the Half-Blood Prince (Harry Potter #6)       5      48.75
+        Fantasy                                                                                            King's Folly (The Kinsman Chronicles #1)       5      39.61
+        Fantasy                                                                                               Paper and Fire (The Great Library #2)       5      49.45
+        Fantasy                                                                                    Princess Between Worlds (Wide-Awake Princess #5)       5      13.34
+        Fantasy                                                                                            The Beast (Black Dagger Brotherhood #14)       5      46.08
+        Fantasy                                                                                        The False Prince (The Ascendance Trilogy #1)       5      56.00
+        Fantasy                                                                                                              The Star-Touched Queen       5      46.02
+        Fantasy                                                                                                              The Star-Touched Queen       5      32.30
+        Fantasy                                                                                       A Feast for Crows (A Song of Ice and Fire #4)       4      17.21
+        Fantasy                                                                                         A Gathering of Shadows (Shades of Magic #2)       4      44.81
+        Fantasy                                                                                                                                 Ash       4      22.06
+        Fantasy                                                                                           City of Glass (The Mortal Instruments #3)       4      56.02
+        Fantasy                                                                         Harry Potter and the Order of the Phoenix (Harry Potter #5)       4      31.63
+        Fantasy                                                                                                                     Heir to the Sky       4      44.07
+        Fantasy                                                                                                                 Myriad (Prentor #1)       4      58.75
+        Fantasy                                                                                                  Shadow Rites (Jane Yellowrock #10)       4      21.72
+        Fantasy                                                                                     The Bane Chronicles (The Bane Chronicles #1-11)       4      44.73
+        Fantasy                                                                                                 The Raven Boys (The Raven Cycle #1)       4      57.74
+        Fantasy                                                                                   The Rose & the Dagger (The Wrath and the Dawn #2)       4      58.64
+        Fantasy                                                                                         A Shard of Ice (The Black Symphony Saga #1)       3      56.63
+        Fantasy                                                                                              Crown of Midnight (Throne of Glass #2)       3      43.29
+        Fantasy                                                                                                   Eragon (The Inheritance Cycle #1)       3      43.87
+        Fantasy                                                                                       Saga, Volume 6 (Saga (Collected Editions) #6)       3      25.02
+        Fantasy                                                                                                     Sister Sable (The Mad Queen #1)       3      13.33
+        Fantasy                                                                                                              Tell the Wind and Fire       3      45.51
+        Fantasy                                                                                      The Silent Twin (Detective Jennifer Knight #3)       3      36.25
+        Fantasy                                                                                                Throne of Glass (Throne of Glass #1)       3      35.07
+        Fantasy                                                                                                                      Unicorn Tracks       3      18.78
+        Fantasy                                                                                       A Storm of Swords (A Song of Ice and Fire #3)       2      31.22
+        Fantasy                                                          Avatar: The Last Airbender: Smoke and Shadow, Part 3 (Smoke and Shadow #3)       2      28.09
+        Fantasy                                                                                                                   Masks and Shadows       2      56.40
+        Fantasy                                                                            Midnight Riot (Peter Grant/ Rivers of London - books #1)       2      55.46
+        Fantasy                                                                                                               One Second (Seven #7)       2      52.94
+        Fantasy                                                                                                                  Soldier (Talon #3)       2      24.72
+        Fantasy                                                                                                         The Demonists (Demonist #1)       2      52.11
+        Fantasy                                                                                         The Hidden Oracle (The Trials of Apollo #1)       2      52.26
+        Fantasy                                                                                                      Vampire Girl (Vampire Girl #1)       2      53.82
+        Fantasy                                                                        A Court of Thorns and Roses (A Court of Thorns and Roses #1)       1      52.37
+        Fantasy                                                                                                                Darkfever (Fever #1)       1      56.02
+        Fantasy                                                                           Harry Potter and the Chamber of Secrets (Harry Potter #2)       1      14.74
+        Fantasy                                                                               Hollow City (Miss Peregrineâs Peculiar Children #2)       1      42.98
+        Fantasy                                                                                                    Island of Dragons (Unwanteds #7)       1      29.65
+        Fantasy                                                                                                                Origins (Alphas 0.5)       1      28.99
+        Fantasy                                                                                                    Searching for Meaning in Gailana       1      38.73
+        Fantasy                                                                                      The Glittering Court (The Glittering Court #1)       1      44.28
+        Fantasy                                                                                 The Mirror & the Maze (The Wrath and the Dawn #1.5)       1      29.38
+        Science                                                                Immunity: How Elie Metchnikoff Changed the Course of Modern Medicine       5      57.36
+        Science The Disappearing Spoon: And Other True Tales of Madness, Love, and the History of the World from the Periodic Table of the Elements       5      57.35
+        Science                                                                                                      Seven Brief Lessons on Physics       4      30.60
+        Science                                                                 Sorting the Beef from the Bull: The Science of Food Fraud Forensics       4      44.74
+        Science                                        The Elegant Universe: Superstrings, Hidden Dimensions, and the Quest for the Ultimate Theory       4      13.03
+        Science                                                                           The Most Perfect Thing: Inside (and Outside) a Bird's Egg       4      42.96
+        Science                                                                                                               The Origin of Species       4      10.01
+        Science                                                                                                                    The Grand Design       3      13.76
+        Science                                                                                     Peak: Secrets from the New Science of Expertise       2      16.28
+        Science                                                               Surely You're Joking, Mr. Feynman!: Adventures of a Curious Character       2      25.83
+        Science                                        Diary of a Citizen Scientist: Chasing Tiger Beetles and Other New Ways of Engaging the World       1      28.41
+        Science                                                                   The Fabric of the Cosmos: Space, Time, and the Texture of Reality       1      55.91
+        Science                                                                                                                    The Selfish Gene       1      29.45
+        Science                                                                       Tipping Point for Planet Earth: How Close Are We to the Edge?       1      37.55
+         Travel                                                                                                  1,000 Places to See Before You Die       5      26.08
+         Travel                                                                                                    A Year in Provence (Provence #1)       4      56.88
+         Travel                                                                  Full Moon over Noahâs Ark: An Odyssey to Mount Ararat and Beyond       4      49.43
+         Travel                                                                                           Neither Here nor There: Travels in Europe       3      38.95
+         Travel                                                                  See America: A Celebration of Our National Parks & Treasured Sites       3      48.87
+         Travel                                                                                                                Under the Tuscan Sun       3      37.33
+         Travel                                                                                                                  A Summer In Europe       2      44.34
+         Travel                                                                                                             It's Only the Himalayas       2      45.17
+         Travel                                                                 Vagabonding: An Uncommon Guide to the Art of Long-Term World Travel       2      36.94
+         Travel                                                                                                            The Great Railway Bazaar       1      30.54
+         Travel                                   The Road to Little Dribbling: Adventures of an American in Britain (Notes From a Small Island #2)       1      23.21
+Women's Fiction                                                                                            Shopaholic Ties the Knot (Shopaholic #3)       5      48.39
+Women's Fiction                                                                                                                          Some Women       5      13.73
+Women's Fiction                                                                                              Something Borrowed (Darcy & Rachel #1)       5      48.96
+Women's Fiction                                                                                                        The Nanny Diaries (Nanny #1)       5      52.53
+Women's Fiction                                                                                                              Grey (Fifty Shades #4)       4      48.49
+Women's Fiction                                                              I Had a Nice Time And Other Lies...: How to find love & sh*t like that       4      57.36
+Women's Fiction                                                                                                                      Keep Me Posted       4      20.46
+Women's Fiction                                                                                               The Edge of Reason (Bridget Jones #2)       4      19.18
+Women's Fiction                                                                                                              The Undomestic Goddess       4      45.75
+Women's Fiction                                                                                                                           Meternity       3      43.58
+Women's Fiction                                                                                                         Will You Won't You Want Me?       3      13.86
+Women's Fiction                                                                                                                       Twenties Girl       2      42.80
+Women's Fiction                                                                                            Bridget Jones's Diary (Bridget Jones #1)       1      29.82
+Women's Fiction                                                                                                              Can You Keep a Secret?       1      21.94
+Women's Fiction                                                                                                                I've Got Your Number       1      19.69
+Women's Fiction                                                                                                  Something Blue (Darcy & Rachel #2)       1      54.62
+Women's Fiction                                                                                    The Devil Wears Prada (The Devil Wears Prada #1)       1      44.29
+
